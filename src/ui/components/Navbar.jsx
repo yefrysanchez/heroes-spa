@@ -11,10 +11,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-slate-900 p-2 flex items-center justify-between">
+    <nav className="w-full sticky top-0 z-50 bg-slate-900 p-2 flex items-center justify-between">
       <ul className=" container mx-auto flex items-center px-4">
         <h1 className="mr-6 font-bold text-gray-50 text-2xl bg-slate-800 p-2 rounded-md select-none">
-          HeroeSPA
+          HeroSPA
         </h1>
         <li className="mr-6">
           <NavLink
@@ -38,30 +38,6 @@ const Navbar = () => {
             }
           >
             DC
-          </NavLink>
-        </li>
-        <li className="mr-6">
-          <NavLink
-            to="/hero"
-            className={({ isActive }) =>
-              `text-gray-400 hover:text-white transition-all duration-200 ${
-                isActive ? "text-white" : ""
-              }`
-            }
-          >
-            Hero
-          </NavLink>
-        </li>
-        <li className="mr-6">
-          <NavLink
-            to="/search"
-            className={({ isActive }) =>
-              `text-gray-400 hover:text-white transition-all duration-200 ${
-                isActive ? "text-white" : ""
-              }`
-            }
-          >
-            Search
           </NavLink>
         </li>
       </ul>

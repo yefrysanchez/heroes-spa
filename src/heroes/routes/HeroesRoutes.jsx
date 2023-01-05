@@ -11,10 +11,10 @@ const HeroesRoutes = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path="marvel" element={<MarvelPage />} />
-        <Route path="dc" element={<DcPage />} />
-        <Route path="hero" element={<HeroPage/>} />
-        <Route path="search" element={<SearchPage/>} />
+        <Route path="/marvel" element={<MarvelPage />} />
+        <Route path="/dc" element={<DcPage />} />
+        <Route path="/hero/:id" element={<HeroPage/>} />
+        <Route path="/search" element={<SearchPage/>} />
         <Route path="/" element={<Navigate to="/marvel" />} />
       </Routes>
     </>
