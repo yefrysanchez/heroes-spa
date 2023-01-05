@@ -1,22 +1,27 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import getHeroById from "../helpers/getHeroById";
 import NotFound from "./NotFound";
 
 const HeroPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const hero = getHeroById(id);
+
+  const OnNavigationBack = () => {
+    navigate(-1);
+  };
 
   if (!hero) {
     return <NotFound />;
   }
 
   return (
-    <div className="flex justify-center mt-10 mx-auto mb-10">
+    <div className="flex justify-center mt-10 mx-auto mb-10  ">
       <div className="flex flex-col md:flex-row md:max-w-2xl md:mh-96 rounded-lg bg-white shadow-lg">
         <img
-          className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+          className="animate__animated animate__fadeInLeft w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
           src={`/assets/heroes/${id}.jpg`}
           alt=""
         />
@@ -40,14 +45,14 @@ const HeroPage = () => {
           </h5>
           <p>{hero.characters}</p>
         </div>
-        <button className="mt-5">
-          <Link
-            to="/"
-            className="relative  md:rounded-l-lg p-4 inline-block text-sm font-medium bg-slate-700 text-white focus:outline-none focus:ring"
+        <div className="flex items-center">
+          <button
+            onClick={OnNavigationBack}
+            className="mt-5 md:rounded-l-lg p-4 inline-block text-sm font-medium bg-slate-700 text-white focus:outline-none focus:ring"
           >
-            Go Home
-          </Link>
-        </button>
+            Go Back
+          </button>
+        </div>
       </div>
     </div>
   );

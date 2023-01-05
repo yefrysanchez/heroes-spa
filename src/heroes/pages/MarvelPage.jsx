@@ -4,7 +4,9 @@ import HeroList from "../components/HeroList";
 const MarvelPage = () => {
   return (
     <div>
-      <h1 className="text-5xl font-bold">MalverPage</h1>
+      <div className="w-40 h-38 mx-auto">
+        <img className="w-full h-full object-cover " src="../../assets/logos/logo-marvel-comics.jpg" alt="Marvel logo" />
+      </div>
       <hr />
       <HeroList publisher="Marvel Comics" />
     </div>

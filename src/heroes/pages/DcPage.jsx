@@ -4,7 +4,9 @@ import HeroList from "../components/HeroList";
 const DcPage = () => {
   return (
     <div>
-      <h1 className="text-5xl font-bold">DC</h1>
+      <div className="w-40 mx-auto">
+        <img className="w-full" src="../../assets/logos/dc-logo.jpg" alt="DC logo" />
+      </div>
       <hr />
       <HeroList publisher="DC Comics" />
     </div>

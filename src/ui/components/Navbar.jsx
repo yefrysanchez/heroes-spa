@@ -40,6 +40,18 @@ const Navbar = () => {
             DC
           </NavLink>
         </li>
+        <li className="mr-6">
+          <NavLink
+            to="/search"
+            className={({ isActive }) =>
+              `text-gray-400 hover:text-white transition-all duration-200 ${
+                isActive ? "text-white" : ""
+              }`
+            }
+          >
+            Search
+          </NavLink>
+        </li>
       </ul>
       <div>
         <button
